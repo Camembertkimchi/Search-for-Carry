@@ -1,7 +1,7 @@
 # Search for Carry
 - TRPG로 구현
 
-본 게임은 이터널 리턴 밈 '내가 캐리헤줇꼐!!!'에서 영감을 받았습니다.
+본 게임은 이터널 리턴 밈 '내가 캐리헤줋꼐!!!'에서 영감을 받았습니다.
 ![title](https://imgproxy.shelter.id/sig/w:3840/rt:fill/Z3M6Ly9zaGVsdGVyLW1lZGlhL3UvQnV0NTdYV3lNN080eUdvbzhyV2V5R25semI4My9pbWFnZXMvMTczMDc4NDU4MDY2MV9lYmNkZDk3Yi04MzJjLTQzZjYtODBmNC0xYTI5OWM5MGE0ZDUud2VicA==)
 ## 게임 개요
 플레이어는 정해진 시간까지 샬럿이 원하는 아이템 2개를 가져와야 합니다. 그 아이템들을 얻기 위해선 강력한 보스 둘을 잡아야 합니다.
