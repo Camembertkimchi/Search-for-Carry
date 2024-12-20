@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Enemy.cs",
+              "RelativeToolTip": "Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:37:06.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Items.cs",
+              "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Items.cs",
+              "RelativeDocumentMoniker": "Items.cs",
+              "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Items.cs",
+              "RelativeToolTip": "Items.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:36:24.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAArwLwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:32:27.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T05:20:17.031Z",
               "EditorCaption": ""

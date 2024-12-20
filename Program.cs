@@ -10,9 +10,10 @@ namespace Search_for_Carry
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-
-
+             Player player = new Player();
+            player.ShowPlayerInfo();
+            Equipment equipment = new Equipment();
+            equipment.ShowEquip();
         }
     }
 }
