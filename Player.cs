@@ -27,7 +27,8 @@ namespace Search_for_Carry
         int _exp = 0;
         int _maxExp = 50;
         int _credit = 100;
-        Random chance;
+        
+        Random chance = new Random();
         //시간 되면 특성도 ㄱㄱ
 
         List<Items> items;
@@ -39,14 +40,15 @@ namespace Search_for_Carry
         public Action LevelChange;
         public Player()
         {
+           
             //액션에 다 때려박기
             //LevelChange += LVChangeMaxExp;
             LevelChange += LVChangeAtk;
             LevelChange += LVChangeDef;
             LevelChange += LVChangeHp;
             //LevelChange.Invoke();
-            //랜덤도 뉴 할당
-            chance = new Random();
+            //chance = new Random();
+            
             for(int i = 1; i < _level; i++)
             {
                 LevelChange.Invoke();
@@ -56,18 +58,15 @@ namespace Search_for_Carry
         #region 레벨업과 스탯 변경
         public void LVChangeAtk()
         {
-            
-            _atk += 15;
+             _atk += 30;
         }
         public void LVChangeDef()
         {
-           
-            _def += 3;
+            _def += 6;
         }
         public void LVChangeHp()
         {
-            
-            _maxHP += 90;
+            _maxHP += 270;
         }
 
         public void LVChangeMaxExp()
@@ -85,7 +84,18 @@ namespace Search_for_Carry
             get { return _credit; }
             set { _credit += value; }
         }
-
+        //경험치 변화
+        public int Exp
+        {
+            get { return _exp; }
+            set { _exp += value; }
+        }
+        //공격 당할 때 가져올 값
+        public int Hp
+        {
+            get { return _hp; }
+            set { _hp -= value; }
+        }
 
         //공격 함수
         public int Attack()
@@ -126,12 +136,10 @@ namespace Search_for_Carry
         int _hp;
         int _critical;
         static List<Equipment> _equipments;// = new List<Equipment>();
-        ItemRank itemRank;
-        EquipmentsAbleTo equipmentsAbleTo;
+        ItemRank _itemRank;
+        EquipmentsAbleTo _equipmentsAbleTo;
 
-       
-
-        #region 무기
+        #region 장비 생성
         //장비 생성기
         public Equipment(string name, int atk, int def, int hp, int critical, ItemRank rank, EquipmentsAbleTo part)
         {
@@ -140,12 +148,12 @@ namespace Search_for_Carry
                 _equipments = new List<Equipment>();
             }
             _name = name;
-            atk = _atk;
+            _atk = atk;
             _def = def;
             _hp = hp;
             _critical = critical;
-            itemRank = rank;
-            equipmentsAbleTo = part;
+            _itemRank = rank;
+            _equipmentsAbleTo = part;
             _equipments.Add(this);
         }
 
@@ -157,44 +165,45 @@ namespace Search_for_Carry
            new Equipment("폴라리스", 210, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.무기);
            new Equipment("안드로메다", 260, 0, 400, 0, ItemRank.전설, EquipmentsAbleTo.무기);
            new Equipment("인터벤션", 220, 0, 0, 33, ItemRank.전설, EquipmentsAbleTo.무기);
-           new Equipment("위도우메이커", 500, 0, 200, 0, ItemRank.초월, EquipmentsAbleTo.무기);
-           
+           new Equipment("위도우메이커", 800, 0, 400, 0, ItemRank.초월, EquipmentsAbleTo.무기);
+           //옷
            new Equipment("광학미체슈트", 138, 0, 200, 24, ItemRank.영웅, EquipmentsAbleTo.옷);
            new Equipment("고스트", 170, 12, 300, 33, ItemRank.전설, EquipmentsAbleTo.옷);
            new Equipment("길리슈트", 200, 10, 200, 33, ItemRank.전설, EquipmentsAbleTo.옷);
            new Equipment("미스릴갑옷", 100, 20, 400, 0, ItemRank.전설, EquipmentsAbleTo.옷);
-           new Equipment("버건디 47", 250, 20, 600, 0, ItemRank.초월, EquipmentsAbleTo.옷);
-           
+           new Equipment("버건디 47", 400, 80, 600, 0, ItemRank.초월, EquipmentsAbleTo.옷);
+           //머리
            new Equipment("전술 Ops헬멧", 50, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.머리); 
            new Equipment("빛의 증표", 80, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
            new Equipment("월계관", 150, 10, 0, 0, ItemRank.전설, EquipmentsAbleTo.머리); 
            new Equipment("쿼드아이", 130, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
            new Equipment("레가투스", 250, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
-           new Equipment("핏빛 왕관", 350, 50, 0, 0, ItemRank.초월, EquipmentsAbleTo.머리);
-           
+           new Equipment("핏빛 왕관", 700, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.머리);
+           //팔
            new Equipment("샤자한의 검집", 70, 5, 0, 0, ItemRank.영웅, EquipmentsAbleTo.팔);
            new Equipment("미스릴 방패", 100, 30, 200, 0, ItemRank.전설, EquipmentsAbleTo.팔);
            new Equipment("행운의 주사위", 240, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.팔);
-           new Equipment("혈사조", 350, 50, 0, 0, ItemRank.초월, EquipmentsAbleTo.팔);
-
-           
-            new Equipment("부케팔로스", 50, 0, 100, 25, ItemRank.영웅, EquipmentsAbleTo.다리);
-            new Equipment("알렉산드로", 80, 0, 100, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-            new Equipment("레이싱 부츠", 100, 15, 0, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-            new Equipment("분홍신", 200, 25, 300, 0, ItemRank.전설, EquipmentsAbleTo.다리);
+           new Equipment("혈사조", 550, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.팔);
+           //다리
+           new Equipment("부케팔로스", 50, 0, 100, 25, ItemRank.영웅, EquipmentsAbleTo.다리);
+           new Equipment("알렉산드로", 80, 0, 100, 33, ItemRank.전설, EquipmentsAbleTo.다리);
+           new Equipment("레이싱 부츠", 100, 15, 0, 33, ItemRank.전설, EquipmentsAbleTo.다리);
+           new Equipment("분홍신", 400, 50, 500, 0, ItemRank.전설, EquipmentsAbleTo.다리);
         }
-
+        #endregion
+        //장비 스탯을 보여주는 함수
         public void ShowEquip()
         {
-            Console.WriteLine(_equipments.Count);
             foreach(var equip in _equipments)
             {
                 Console.WriteLine(equip._name);
+                Console.Write($"부위: {equip._equipmentsAbleTo}/등급: {equip._itemRank}/공격력: {equip._atk}, 방어력: {equip._def}, 체력: {equip._hp}, 치명타 확률: {equip._critical}");
+                Console.WriteLine();
             }
         }
 
 
-        #endregion
+       
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Search_for_Carry
 {
-    internal class Items
+    public class Items
     {
         List<Items> items;
 

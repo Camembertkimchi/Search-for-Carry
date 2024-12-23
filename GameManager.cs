@@ -8,6 +8,20 @@ namespace Search_for_Carry
 {
     internal class GameManager
     {
+        
+        public GameManager()
+        {
+            Player player = new Player();
+            Enemy enemy = new Enemy();
+            
+            Equipment equipment = new Equipment();
+            equipment.ShowEquip();
+            enemy.ShowInfo();
 
+            
+            
+            
+            
+        }
     }
 }
