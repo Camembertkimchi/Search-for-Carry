@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Search_for_Carry
 {
+    
     internal class EnemyManager
     {
         public static Dictionary<string, Enemy> _enemyDictionary;
@@ -27,6 +29,16 @@ namespace Search_for_Carry
                     { "위클라인 박사", new DrWickline() }
                 };
             }
+        }
+
+        public Enemy GetEnemy(string name, int level)
+        {
+            if(_enemyDictionary.TryGetValue(name, out Enemy enemy))
+            {
+                var enemyClone = enemy.Clone(level);
+                return enemyClone;
+            }
+            return null;
         }
           
             

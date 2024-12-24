@@ -12,46 +12,93 @@ namespace Search_for_Carry
     }
     public enum ItemRank
     {
-        영웅, 전설, 초월
+        영웅, 전설, 초월, 고유
     }
 
+    
+    
+    //장비 제작 구현 -> 재료 아이템이 있으면 해당 상위 아이템 제작 가능 및 재료 삭제, 아이템 추가
 
     public class Player 
     {
-        int _atk = 41;
-        int _def = 10;
-        int _critical = 0;
-        int _hp = 890;
-        int _maxHP = 890;
-        int _level = 9;
-        int _exp = 0;
-        int _maxExp = 50;
-        int _credit = 100;
+        static int _atk = 41;
+        static int _def = 10;
+        static int _critical = 0;
+        static int _hp = 890;
+        static int _maxHp = 890;
+        static int _level = 9;
+        static int _exp = 0;
+        static int _maxExp = 50;
+        static int _credit = 100;
         
         Random chance = new Random();
         //시간 되면 특성도 ㄱㄱ
-
+        string userInput;
         List<Items> items;
         List<Equipment> equipments;
-
-
+        protected static LinkedList<IInventory> inventory;
+        
 
         //레벨업 할 때 변하는 스탯
         public Action LevelChange;
-        public Player()
+        //public Player()
+        //{
+        //    여기에 액션이랑 다 넣어놨는데, 자식 클래스가 생성될 때 부모 생성자도 호출함
+        //    즉, 계속해서 인벤토리 생성 + 액션에 중복된 함수를 때려 넣게 됨.
+        //}
+        public void Activate()
         {
-           
-            //액션에 다 때려박기
-            //LevelChange += LVChangeMaxExp;
+            inventory = new LinkedList<IInventory>();
             LevelChange += LVChangeAtk;
             LevelChange += LVChangeDef;
             LevelChange += LVChangeHp;
-            //LevelChange.Invoke();
-            //chance = new Random();
-            
-            for(int i = 1; i < _level; i++)
+
+            for (int i = 1; i < _level; i++)
             {
                 LevelChange.Invoke();
+            }
+        }
+        public void AddItem(Items item)
+        {
+            inventory.AddFirst(item);
+        }
+        public void DeleteItem(Items item)
+        {
+            inventory.Remove(item);
+        }
+        public void ShowInventory()
+        {
+            foreach (var item in inventory)
+            {
+                if(item != null)
+                {
+                    Console.Write(item.Name + "   ");
+                }
+                else
+                {
+                    Console.WriteLine("\t");
+                }
+                
+            } 
+        }
+
+        public void MakeItem()
+        {
+            foreach(var item in inventory)
+            {
+                if(item.Name == "운석")
+                {
+                    Console.WriteLine("운석으로 무엇을 만들까요?");
+                    Console.WriteLine("무기\t옷\t머리\t다리");
+                    userInput = Console.ReadLine();
+                    switch(userInput)
+                    {
+                        case "무기": inventory.AddFirst(Equipment.CopyItem("안드로메다"));
+                            Console.WriteLine("안드로메다를 만들었습니다!");
+                            break;
+                    }
+                    break;
+                }
             }
         }
 
@@ -66,7 +113,7 @@ namespace Search_for_Carry
         }
         public void LVChangeHp()
         {
-            _maxHP += 270;
+            _maxHp += 270;
         }
 
         public void LVChangeMaxExp()
@@ -96,6 +143,47 @@ namespace Search_for_Carry
             get { return _hp; }
             set { _hp -= value; }
         }
+        
+        #region 장비로 스탯 더하는 프로퍼티
+        public int MaxHp
+        {
+            get { return _maxHp; } protected set { _maxHp += value; }
+        }
+        public int Atk
+        {
+            get { return _atk; } protected set { _atk += value; }
+        }
+        public int Def
+        {
+            get { return _def; } protected set { _def += value; }
+        }
+        public int Critical
+        {
+            get { return _critical; } protected set { _critical += value; }
+        }
+        #endregion
+        #region 장비 교체할 때 기존 장비 스탯 제거할 때 쓰는 프로퍼티
+        public int MinusMaxHp
+        {
+            get { return _maxHp; }
+            protected set { _maxHp -= value; }
+        }
+        public int MinusAtk
+        {
+            get { return _atk; }
+            protected set { _atk -= value; }
+        }
+        public int MinusDef
+        {
+            get { return _def; }
+            protected set { _def -= value; }
+        }
+        public int MinusCritical
+        {
+            get { return _critical; }
+            protected set { _critical -= value; }
+        }
+        #endregion
 
         //공격 함수
         public int Attack()
@@ -117,93 +205,14 @@ namespace Search_for_Carry
             Console.WriteLine($"공격력: {_atk}");
             Console.WriteLine($"방어력: {_def}");
             Console.WriteLine($"치명타 확률: {_critical}");
-            Console.WriteLine($"체력: {_maxHP}");
+            Console.WriteLine($"체력: {_maxHp} / {_hp}");
             //Console.WriteLine($"보유 크레딧: {_}"); 이건 선택지에서 표기하는 게 좋아보임
             Console.WriteLine($"");
-            Console.WriteLine($"경험치: {_maxExp} / {_exp}");
-        }
-
-
+            Console.WriteLine($"경험치: {_maxExp} / {Exp}");
+         }
     }
-
 
    
-    public class Equipment 
-    {
-        string _name;
-        int _atk;
-        int _def;
-        int _hp;
-        int _critical;
-        static List<Equipment> _equipments;// = new List<Equipment>();
-        ItemRank _itemRank;
-        EquipmentsAbleTo _equipmentsAbleTo;
-
-        #region 장비 생성
-        //장비 생성기
-        public Equipment(string name, int atk, int def, int hp, int critical, ItemRank rank, EquipmentsAbleTo part)
-        {
-            if(_equipments == null)
-            {
-                _equipments = new List<Equipment>();
-            }
-            _name = name;
-            _atk = atk;
-            _def = def;
-            _hp = hp;
-            _critical = critical;
-            _itemRank = rank;
-            _equipmentsAbleTo = part;
-            _equipments.Add(this);
-        }
-
-        public Equipment()
-        {
-           
-            //모든 장비 추가
-            //무기
-           new Equipment("폴라리스", 210, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.무기);
-           new Equipment("안드로메다", 260, 0, 400, 0, ItemRank.전설, EquipmentsAbleTo.무기);
-           new Equipment("인터벤션", 220, 0, 0, 33, ItemRank.전설, EquipmentsAbleTo.무기);
-           new Equipment("위도우메이커", 800, 0, 400, 0, ItemRank.초월, EquipmentsAbleTo.무기);
-           //옷
-           new Equipment("광학미체슈트", 138, 0, 200, 24, ItemRank.영웅, EquipmentsAbleTo.옷);
-           new Equipment("고스트", 170, 12, 300, 33, ItemRank.전설, EquipmentsAbleTo.옷);
-           new Equipment("길리슈트", 200, 10, 200, 33, ItemRank.전설, EquipmentsAbleTo.옷);
-           new Equipment("미스릴갑옷", 100, 20, 400, 0, ItemRank.전설, EquipmentsAbleTo.옷);
-           new Equipment("버건디 47", 400, 80, 600, 0, ItemRank.초월, EquipmentsAbleTo.옷);
-           //머리
-           new Equipment("전술 Ops헬멧", 50, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.머리); 
-           new Equipment("빛의 증표", 80, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
-           new Equipment("월계관", 150, 10, 0, 0, ItemRank.전설, EquipmentsAbleTo.머리); 
-           new Equipment("쿼드아이", 130, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
-           new Equipment("레가투스", 250, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리); 
-           new Equipment("핏빛 왕관", 700, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.머리);
-           //팔
-           new Equipment("샤자한의 검집", 70, 5, 0, 0, ItemRank.영웅, EquipmentsAbleTo.팔);
-           new Equipment("미스릴 방패", 100, 30, 200, 0, ItemRank.전설, EquipmentsAbleTo.팔);
-           new Equipment("행운의 주사위", 240, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.팔);
-           new Equipment("혈사조", 550, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.팔);
-           //다리
-           new Equipment("부케팔로스", 50, 0, 100, 25, ItemRank.영웅, EquipmentsAbleTo.다리);
-           new Equipment("알렉산드로", 80, 0, 100, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-           new Equipment("레이싱 부츠", 100, 15, 0, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-           new Equipment("분홍신", 400, 50, 500, 0, ItemRank.전설, EquipmentsAbleTo.다리);
-        }
-        #endregion
-        //장비 스탯을 보여주는 함수
-        public void ShowEquip()
-        {
-            foreach(var equip in _equipments)
-            {
-                Console.WriteLine(equip._name);
-                Console.Write($"부위: {equip._equipmentsAbleTo}/등급: {equip._itemRank}/공격력: {equip._atk}, 방어력: {equip._def}, 체력: {equip._hp}, 치명타 확률: {equip._critical}");
-                Console.WriteLine();
-            }
-        }
-
-
-       
-
-    }
+   
+   
 }
