@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,20 +15,24 @@
       "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|c:\\users\\kga\\desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\search for carry\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295DF927-D25B-4EB1-8F13-4B4BBBB93278}|Search for Carry.csproj|solutionrelative:loadout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -52,14 +52,14 @@
               "RelativeDocumentMoniker": "Items.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Items.cs",
               "RelativeToolTip": "Items.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwEAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-20T06:36:24.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Loadout.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Loadout.cs",
               "RelativeDocumentMoniker": "Loadout.cs",
@@ -72,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Equipment.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Equipment.cs",
               "RelativeDocumentMoniker": "Equipment.cs",
@@ -85,65 +85,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "EnemyManager.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\EnemyManager.cs",
               "RelativeDocumentMoniker": "EnemyManager.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\EnemyManager.cs",
               "RelativeToolTip": "EnemyManager.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAApwCkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T08:12:39.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAlwHMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAgwJ4BAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-20T06:37:06.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAApwE8AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-20T06:32:27.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T05:20:17.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
               "ToolTip": "C:\\Users\\KGA\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D\\Search for Carry\\GameManager.cs",
               "RelativeToolTip": "GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T02:53:49.27Z",
               "EditorCaption": ""

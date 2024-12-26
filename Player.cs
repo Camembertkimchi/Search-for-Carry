@@ -94,12 +94,23 @@ namespace Search_for_Carry
                     switch(userInput)
                     {
                         case "무기": inventory.AddFirst(Equipment.CopyItem("안드로메다"));
+                            inventory.Remove(item);
                             Console.WriteLine("안드로메다를 만들었습니다!");
                             break;
                     }
                     break;
                 }
-            }
+                else if(item.Name == "미스릴")
+                {
+                    Console.WriteLine("미스릴로 무엇을 만들까요?");
+                    Console.WriteLine("무기\t옷\t머리\t다리");
+                }
+                else
+                {
+                    Console.WriteLine("해당 아이템은 가지고 있지 않습니다.");
+                    break; 
+                }
+               }
         }
 
         #region 레벨업과 스탯 변경
