@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Activation;
 using System.Text;
@@ -11,15 +12,24 @@ namespace Search_for_Carry
     public abstract class Enemy
     {
         public string Name {  get; protected set; }
-        public int Hp { get; protected set; }
+        public int Hp { get; set; }
         public int Atk { get; protected set; }
         public int Def {  get; protected set; }
         public int Level {  get; protected set; }
         public int DropCredit { get; protected set; }
         public int DropEXP {  get; protected set; }
+        public int MinusHp 
+        {
+            get { return Hp; }
+            set
+            {
+                Hp -= value;
+            } 
+        }
         List<Items> _dropItems;
         public static Dictionary<string,Enemy> _enemyDictionary;
-
+        protected Random _rnd = new Random();
+        protected int _dropChance;
         public abstract Enemy Clone(int level);
         public virtual int Attack()
         {
@@ -28,6 +38,8 @@ namespace Search_for_Carry
         }
         
         //플레이어 체력 - 공격력
+
+
 
         public virtual Items Dead()
         {
@@ -77,17 +89,17 @@ namespace Search_for_Carry
         }
         public Chicken()
         {
-           
+            
         }
         public Chicken(int level)
         {
+
             Name = "닭";
             Atk = 10;
             Def = 2;
             Hp = 120;
             DropCredit = 3;
             DropEXP = 5;
-
             LevelChange += LVChangeAtk;
             LevelChange += LVChangeDef;
             LevelChange += LVChangeHp;
@@ -112,21 +124,11 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("꼬꼬옥!! 꼬꼬..");
-            return Items.CopyItem("운석");
+            return Items.CopyItem(" ");
         }
         public override Enemy Clone(int level)
         {
-            return new Chicken(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-
-            };
+            return new Chicken(level);
         }
 
     }
@@ -155,14 +157,14 @@ namespace Search_for_Carry
         {
             DropCredit += 1;
         }
-
-        public Bat()
+        public void LVChangeEXP()
         {
-            LevelChange += LVChangeAtk;
-            LevelChange += LVChangeDef;
-            LevelChange += LVChangeHp;
-            LevelChange += LVChangeCredit;
-      
+            DropEXP += 15;
+        }
+
+        public Bat(int level)
+        {
+
             Name = "박쥐";
             Level = 1;
             Atk = 10;
@@ -170,16 +172,22 @@ namespace Search_for_Carry
             Hp = 160;
             DropCredit = 5;
             DropEXP = 10;
-
-        }
-
-        public Bat(int level)
-        {
+            LevelChange += LVChangeAtk;
+            LevelChange += LVChangeDef;
+            LevelChange += LVChangeHp;
+            LevelChange += LVChangeCredit;
+            LevelChange += LVChangeEXP;
             Level += level;
-            for(int i = 1;  i < Level; i++)
+            
+            for (int i = 1; i < Level; i++)
             {
                 LevelChange.Invoke();
             }
+        }
+
+        public Bat()
+        {
+           
         }
 
 
@@ -192,20 +200,11 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("뀌익..");
-            return Items.CopyItem("");
+            return Items.CopyItem(" ");
         }
         public override Enemy Clone(int level)
         {
-            return new Bat(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Bat(level);
         }
     }
 
@@ -233,11 +232,19 @@ namespace Search_for_Carry
         {
             DropCredit += 2;
         }
+        public void LVChangeEXP()
+        {
+            DropEXP += 15;
+        }
 
 
         public Dog()
         {
            
+
+        }
+        public Dog(int level)
+        {
             Name = "들개";
             Level = 2;
             Atk = 20;
@@ -249,10 +256,6 @@ namespace Search_for_Carry
             LevelChange += LVChangeDef;
             LevelChange += LVChangeHp;
             LevelChange += LVChangeCredit;
-        }
-        public Dog(int level)
-        {
-            
             Level += level;
             for (int i = 0; i < Level; i++)
             {
@@ -271,20 +274,11 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("끼우웅..");
-            return Items.CopyItem("");
+            return Items.CopyItem(" ");
         }
         public override Enemy Clone(int level)
         {
-            return new Dog(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Dog(level);
         }
 
     }
@@ -307,14 +301,16 @@ namespace Search_for_Carry
         }
         public void LVChangeHp()
         {
-
             Hp += 150;
         }
         public void LVChangeCredit()
         {
             DropCredit += 3;
         }
-
+        public void LVChangeEXP()
+        {
+            DropEXP += 15;
+        }
         public Wolf()
         {
            
@@ -351,20 +347,31 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("크허엉..");
-            return Items.CopyItem("미스릴");
+            _dropChance = _rnd.Next(1, 4);
+          
+            if( _dropChance == 1)
+            {
+                Console.WriteLine("운석을 획득했습니다!");
+               
+                return Items.CopyItem("운석");
+            }
+            else if(_dropChance == 2)
+            {
+                Console.WriteLine("생명의 나무를 얻었습니다!");
+                return Items.CopyItem("생명의 나무");
+            }
+            else
+            {
+                Console.WriteLine("미스릴을 얻었습니다!");
+                return Items.CopyItem("미스릴");
+            }
+            
+
         }
         public override Enemy Clone(int level)
         {
-            return new Wolf(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Wolf(level);
+            
         }
     }
 
@@ -394,8 +401,19 @@ namespace Search_for_Carry
         {
             DropCredit += 5;
         }
+        public void LVChangeEXP()
+        {
+            DropEXP += 15;
+        }
 
         public Bear()
+        {
+           
+           
+
+        }
+
+        public Bear(int level)
         {
             Name = "곰";
             Level = 6;
@@ -403,17 +421,12 @@ namespace Search_for_Carry
             Def = 12;
             Hp = 1000;
             DropCredit = 40;
-            DropEXP= 50;
+            DropEXP = 50;
             LevelChange += LVChangeAtk;
             LevelChange += LVChangeDef;
             LevelChange += LVChangeHp;
             LevelChange += LVChangeCredit;
-           
 
-        }
-
-        public Bear(int level)
-        {
             Level += level;
             for (int i = 0; i < Level; i++)
             {
@@ -430,20 +443,33 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("꾸어엉..");
-            return Items.CopyItem("");
+            _dropChance = _rnd.Next(1, 5);
+            if (_dropChance == 1)
+            {
+                Console.WriteLine("운석을 획득했습니다!");
+
+                return Items.CopyItem("운석");
+            }
+            else if (_dropChance == 2)
+            {
+                Console.WriteLine("생명의 나무를 얻었습니다!");
+                return Items.CopyItem("생명의 나무");
+            }
+            else if ( _dropChance == 3) 
+            {
+                Console.WriteLine("미스릴을 얻었습니다!");
+                return Items.CopyItem("미스릴");
+            }
+            else
+            {
+                Console.WriteLine("포스 코어를 얻었습니다!");
+                return Items.CopyItem("포스 코어");
+            }
         }
         public override Enemy Clone(int level)
         {
-            return new Bear(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Bear(level);
+            
         }
 
 
@@ -481,20 +507,13 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("삐유웅..");
+            Console.WriteLine("미스릴을 얻었습니다!");
             return Items.CopyItem("미스릴");
         }
         public override Enemy Clone(int level)
         {
-            return new Alpha(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Alpha(level);
+           
         }
 
     }
@@ -526,20 +545,13 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("삐유우우웅..");
+            Console.WriteLine("뽀쮸코어를 얻었습니다!!");
             return Items.CopyItem("뽀쮸코어");
         }
         public override Enemy Clone(int level)
         {
-            return new Omega(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new Omega(level);
+          
         }
     }
 
@@ -572,21 +584,14 @@ namespace Search_for_Carry
         public override Items Dead()
         {
             Console.WriteLine("으어얽..");
+            Console.WriteLine("혀랙팩을 얻었습니다!!");
             return Items.CopyItem("혀랙팩");
         }
 
         public override Enemy Clone(int level)
         {
-            return new DrWickline(level)
-            {
-                Level = level,
-                Name = this.Name,
-                Atk = this.Atk,
-                Def = this.Def,
-                Hp = this.Hp,
-                DropCredit = this.DropCredit,
-                DropEXP = this.DropEXP
-            };
+            return new DrWickline(level);
+           
         }
 
 

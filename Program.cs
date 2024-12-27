@@ -11,7 +11,7 @@ namespace Search_for_Carry
         static void Main(string[] args)
         {
           GameManager gameManager = new GameManager();
-          gameManager.StartGame();
+            gameManager.StartGame();
 
         }
     }

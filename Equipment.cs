@@ -48,7 +48,7 @@ namespace Search_for_Carry
             new Equipment("광학미체슈트", 138, 0, 200, 24, ItemRank.영웅, EquipmentsAbleTo.옷);
             new Equipment("고스트", 170, 12, 300, 33, ItemRank.전설, EquipmentsAbleTo.옷);
             new Equipment("길리슈트", 200, 10, 200, 33, ItemRank.전설, EquipmentsAbleTo.옷);
-            new Equipment("미스릴갑옷", 100, 20, 400, 0, ItemRank.전설, EquipmentsAbleTo.옷);
+            new Equipment("미스릴 갑옷", 100, 20, 400, 0, ItemRank.전설, EquipmentsAbleTo.옷);
             new Equipment("버건디 47", 400, 80, 600, 0, ItemRank.초월, EquipmentsAbleTo.옷);
             //머리
             new Equipment("전술 Ops헬멧", 50, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.머리);
@@ -70,13 +70,16 @@ namespace Search_for_Carry
         }
         #endregion
         //장비 스탯을 보여주는 함수
-        public void ShowEquip()
+        public static void ShowEquipInfo(string name)
         {
             foreach (var equip in _equipments)
             {
-                Console.WriteLine(equip.Name);
-                Console.Write($"부위: {equip.EquipmentsAbleTo}/등급: {equip.ItemRank}/공격력: {equip.Atk}, 방어력: {equip.Def}, 체력: {equip.Hp}, 치명타 확률: {equip.Critical}");
-                Console.WriteLine();
+                if(equip.Name == name)
+                {
+                    Console.WriteLine(equip.Name);
+                    Console.Write($"부위: {equip.EquipmentsAbleTo}/등급: {equip.ItemRank}/공격력: {equip.Atk}, 방어력: {equip.Def}, 체력: {equip.Hp}, 치명타 확률: {equip.Critical}");
+                    Console.WriteLine();
+                }
             }
         }
 
@@ -89,6 +92,7 @@ namespace Search_for_Carry
                     return item;
                 }
             }
+            
             return null;
         }
 
