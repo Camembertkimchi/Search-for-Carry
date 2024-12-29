@@ -46,9 +46,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="GameManager.cs" />
-    <Compile Include="ItemManager.cs" />
     <Compile Include="Items.cs" />
-    <Compile Include="Kiosk.cs" />
     <Compile Include="EnemyManager.cs" />
     <Compile Include="Loadout.cs" />
     <Compile Include="Player.cs" />

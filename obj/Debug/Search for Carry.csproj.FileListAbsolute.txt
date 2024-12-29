@@ -5,3 +5,10 @@ C:\Users\KGA\Desktop\프로그래밍\Search for Carry\obj\Debug\Search for Carry
 C:\Users\KGA\Desktop\프로그래밍\Search for Carry\obj\Debug\Search for Carry.csproj.CoreCompileInputs.cache
 C:\Users\KGA\Desktop\프로그래밍\Search for Carry\obj\Debug\Search for Carry.exe
 C:\Users\KGA\Desktop\프로그래밍\Search for Carry\obj\Debug\Search for Carry.pdb
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\bin\Debug\Search for Carry.exe.config
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\bin\Debug\Search for Carry.exe
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\bin\Debug\Search for Carry.pdb
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\obj\Debug\Search for Carry.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\obj\Debug\Search for Carry.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\obj\Debug\Search for Carry.exe
+C:\Users\Administrator\Documents\GitHub\Search-for-Carry\obj\Debug\Search for Carry.pdb

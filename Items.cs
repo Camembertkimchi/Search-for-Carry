@@ -12,7 +12,7 @@ namespace Search_for_Carry
     }
     public class Items : IInventory
     {
-        private static List<Items> _items;
+        protected static List<Items> _items;
         ItemRank _rank;
         static string _name;
 
@@ -40,13 +40,13 @@ namespace Search_for_Carry
 
         public Items()
         {
-            new Items("운석", ItemRank.영웅);
-            new Items("생명의 나무", ItemRank.영웅);
-            new Items("미스릴", ItemRank.영웅);
-            new Items("포스 코어", ItemRank.영웅);
-            new Items("혈액 샘플", ItemRank.초월);
-            new Items("뽀쮸코어", ItemRank.고유);
-            new Items("혀랙팩", ItemRank.고유);
+            new Items("운석", ItemRank.Hero);
+            new Items("생명의 나무", ItemRank.Hero);
+            new Items("미스릴", ItemRank.Hero);
+            new Items("포스 코어", ItemRank.Hero);
+            new Items("혈액 샘플", ItemRank.Overwhelming);
+            new Items("뽀쮸코어", ItemRank.Unique);
+            new Items("혀랙팩", ItemRank.Unique);
 
         }
 
@@ -57,6 +57,10 @@ namespace Search_for_Carry
                 if(item.Name == name)
                 {
                     return item;
+                }
+                else if(item.Name == " ")
+                {
+                    break;
                 }
             }
             return null;

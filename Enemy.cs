@@ -26,45 +26,16 @@ namespace Search_for_Carry
                 Hp -= value;
             } 
         }
-        List<Items> _dropItems;
-        public static Dictionary<string,Enemy> _enemyDictionary;
         protected Random _rnd = new Random();
         protected int _dropChance;
         public abstract Enemy Clone(int level);
-        public virtual int Attack()
-        {
-            Console.WriteLine("뭔가 잘못 됨");
-            return _enemyDictionary.Count;
-        }
-        
-        //플레이어 체력 - 공격력
-
-
-
-        public virtual Items Dead()
-        {
-            Console.WriteLine("뭔가 잘못 됨");
-            return Items.CopyItem("운석");
-        }
-        //드랍 아이템 설정
-        //돈 설정
-
+        public abstract int Attack();
+        public abstract Items Dead();
     }
 
     public class Chicken : Enemy
     {
-        //int _atk = 10;
-        //int _def = 2;
-        //int _hp = 120;
-        //int _dropCredit = 3;
-        //int _dropExp = 5;
-        
-       
-        //Player _player;
-
         public Action LevelChange;
-       
-
         public void LVChangeAtk()
         {
             Atk += 10;
@@ -118,6 +89,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("꼬꼬닥!!");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -194,6 +166,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("찌직!");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -268,6 +241,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("컹!!");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -341,6 +315,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("크르르르");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -437,6 +412,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("크어엉");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -482,6 +458,11 @@ namespace Search_for_Carry
 
         public Alpha()
         {
+         
+        }
+       
+        public Alpha(int level)
+        {
             Name = "알파";
             Level = 12;
             Atk = 300;
@@ -489,10 +470,6 @@ namespace Search_for_Carry
             Hp = 5250;
             DropCredit = 100;
             DropEXP = 500;
-        }
-       
-        public Alpha(int level)
-        {
             Level += level;
         }
 
@@ -501,6 +478,7 @@ namespace Search_for_Carry
         public override int Attack()
         {
             Console.WriteLine("위이이잉");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -523,6 +501,10 @@ namespace Search_for_Carry
 
         public Omega()
         {
+        }
+        public Omega(int level)
+        {
+
             Name = "오메가";
             Level = 16;
             Atk = 400;
@@ -530,15 +512,13 @@ namespace Search_for_Carry
             Hp = 8800;
             DropCredit = 200;
             DropEXP = 1000;
-        }
-        public Omega(int level)
-        {
             Level += level;
         }
 
         public override int Attack()
         {
             Console.WriteLine("위이이잉");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 
@@ -561,6 +541,11 @@ namespace Search_for_Carry
       
         public DrWickline()
         {
+            
+        }
+
+        public DrWickline(int level)
+        {
             Name = "위클라인 박사";
             Level = 20;
             Atk = 800;
@@ -568,16 +553,14 @@ namespace Search_for_Carry
             Hp = 12500;
             DropCredit = 150;
             DropEXP = 2000;
-        }
-
-        public DrWickline(int level)
-        {
             Level += level;
         }
 
         public override int Attack()
         {
+
             Console.WriteLine("크흐흐흐..");
+            Console.WriteLine($"{Atk} 피해를 받았습니다");
             return Atk;
         }
 

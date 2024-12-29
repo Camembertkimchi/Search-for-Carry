@@ -10,11 +10,18 @@ namespace Search_for_Carry
 {
     public enum EquipmentsAbleTo
     {
-        무기, 옷, 머리, 팔, 다리
+        Weapon = 0, 
+        Cloth, 
+        Helmet,
+        Arm, 
+        Shoes
     }
     public enum ItemRank
     {
-        영웅, 전설, 초월, 고유
+        Hero = 0,
+        Legend, 
+        Overwhelming,
+        Unique
     }
 
     
@@ -31,10 +38,10 @@ namespace Search_for_Carry
         static int _level = 9;
         static int _exp = 0;
         static int _maxExp = 50;
-        static int _credit = 100;
+        static int _credit = 5000;
         
         Random chance = new Random();
-        //시간 되면 특성도 ㄱㄱ
+        
         string userInput;
         LinkedList<IInventory> willBeDeleteditems = new LinkedList<IInventory>();
         LinkedList<Equipment> madeByCraft = new LinkedList<Equipment>();
@@ -52,11 +59,6 @@ namespace Search_for_Carry
 
         //레벨업 할 때 변하는 스탯
         public Action LevelChange;
-        //public Player()
-        //{
-        //    여기에 액션이랑 다 넣어놨는데, 자식 클래스가 생성될 때 부모 생성자도 호출함
-        //    즉, 계속해서 인벤토리 생성 + 액션에 중복된 함수를 때려 넣게 됨.
-        //}
         public void Activate()
         {
             inventory = new LinkedList<IInventory>();
@@ -110,10 +112,11 @@ namespace Search_for_Carry
         {
             willBeDeleteditems.Clear();
             
-            madeByCraft .Clear();
+            madeByCraft.Clear();
 
             foreach (var item in inventory)
                 {
+                if (item == null) continue;
                     if (item.Name == "운석" && name == "운석")
                     {
                         Console.WriteLine("운석으로 무엇을 만들까요?");
@@ -310,14 +313,14 @@ namespace Search_for_Carry
                                 break;
                         }
                     }
-                    else if (item.Name == "혈액팩" && name == "혈액팩")
+                    else if (item.Name == "혈액 샘플" && name == "혈액 샘플")
                     {
-                        Console.WriteLine("혈액팩으로 무엇을 만들까요?");
+                        Console.WriteLine("혈액 샘플로 무엇을 만들까요?");
                         Console.WriteLine("무기\t옷\t머리\t팔\t다리\t1. 취소");
                         userInput = Console.ReadLine();
                         if (userInput != "팔" || userInput != "무기" || userInput != "옷" || userInput != "머리" || userInput != "다리" || userInput != "1")
                         {
-                            while (userInput != "옷" && userInput != "무기" && userInput != "머리" && userInput != "옷" && userInput != "1")
+                            while (userInput != "팔" && userInput != "옷" && userInput != "무기" && userInput != "머리" && userInput != "옷" && userInput != "1")
                             {
                                 Console.WriteLine("다시 입력해주세요");
                                 userInput = Console.ReadLine();
@@ -516,7 +519,7 @@ namespace Search_for_Carry
                     rSkill = 0;
                 }
                 Console.WriteLine("어떤 스킬을 사용하시겠습니까?");
-                Console.WriteLine($"Q 쿨타임: {qSkill}\nW 쿨타임: {wSkill}\nE 쿨타임: {eSkill}\nR 쿨타임: {rSkill}\n1. 돌아가기");
+                Console.WriteLine($"Q 쿨타임: {qSkill}. 공격력 + 300의 피해\nW 쿨타임: {wSkill}. 공격력 2배의 피해\nE 쿨타임: {eSkill}. (공격력+200) 2배의 피해\nR 쿨타임: {rSkill}. 공격력 5배의 피해\n1. 돌아가기");
                 userInput = Console.ReadLine();
                 //입력 검사
                 if (userInput != "Q" || userInput != "W" || userInput != "E" || userInput != "R" || userInput != "1")

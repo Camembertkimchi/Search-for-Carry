@@ -40,33 +40,33 @@ namespace Search_for_Carry
 
             //모든 장비 추가
             //무기
-            new Equipment("폴라리스", 210, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.무기);
-            new Equipment("안드로메다", 260, 0, 400, 0, ItemRank.전설, EquipmentsAbleTo.무기);
-            new Equipment("인터벤션", 220, 0, 0, 33, ItemRank.전설, EquipmentsAbleTo.무기);
-            new Equipment("위도우메이커", 800, 0, 400, 0, ItemRank.초월, EquipmentsAbleTo.무기);
+            new Equipment("폴라리스", 210, 0, 100, 0, ItemRank.Hero, EquipmentsAbleTo.Weapon);
+            new Equipment("안드로메다", 260, 0, 400, 0, ItemRank.Legend, EquipmentsAbleTo.Weapon);
+            new Equipment("인터벤션", 220, 0, 0, 33, ItemRank.Legend, EquipmentsAbleTo.Weapon);
+            new Equipment("위도우메이커", 800, 0, 400, 0, ItemRank.Overwhelming, EquipmentsAbleTo.Weapon);
             //옷
-            new Equipment("광학미체슈트", 138, 0, 200, 24, ItemRank.영웅, EquipmentsAbleTo.옷);
-            new Equipment("고스트", 170, 12, 300, 33, ItemRank.전설, EquipmentsAbleTo.옷);
-            new Equipment("길리슈트", 200, 10, 200, 33, ItemRank.전설, EquipmentsAbleTo.옷);
-            new Equipment("미스릴 갑옷", 100, 20, 400, 0, ItemRank.전설, EquipmentsAbleTo.옷);
-            new Equipment("버건디 47", 400, 80, 600, 0, ItemRank.초월, EquipmentsAbleTo.옷);
+            new Equipment("광학미체슈트", 138, 0, 200, 24, ItemRank.Hero, EquipmentsAbleTo.Cloth);
+            new Equipment("고스트", 170, 12, 300, 33, ItemRank.Legend, EquipmentsAbleTo.Cloth);
+            new Equipment("길리슈트", 200, 10, 200, 33, ItemRank.Legend, EquipmentsAbleTo.Cloth);
+            new Equipment("미스릴 갑옷", 100, 20, 400, 0, ItemRank.Legend, EquipmentsAbleTo.Cloth);
+            new Equipment("버건디 47", 400, 80, 600, 0, ItemRank.Overwhelming, EquipmentsAbleTo.Cloth);
             //머리
-            new Equipment("전술 Ops헬멧", 50, 0, 100, 0, ItemRank.영웅, EquipmentsAbleTo.머리);
-            new Equipment("빛의 증표", 80, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리);
-            new Equipment("월계관", 150, 10, 0, 0, ItemRank.전설, EquipmentsAbleTo.머리);
-            new Equipment("쿼드아이", 130, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리);
-            new Equipment("레가투스", 250, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.머리);
-            new Equipment("핏빛 왕관", 700, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.머리);
+            new Equipment("전술 Ops헬멧", 50, 0, 100, 0, ItemRank.Hero, EquipmentsAbleTo.Helmet);
+            new Equipment("빛의 증표", 80, 0, 0, 35, ItemRank.Legend, EquipmentsAbleTo.Helmet);
+            new Equipment("월계관", 150, 10, 0, 0, ItemRank.Legend, EquipmentsAbleTo.Helmet);
+            new Equipment("쿼드아이", 130, 0, 0, 35, ItemRank.Legend, EquipmentsAbleTo.Helmet);
+            new Equipment("레가투스", 250, 0, 0, 35, ItemRank.Legend, EquipmentsAbleTo.Helmet);
+            new Equipment("핏빛 왕관", 700, 100, 0, 0, ItemRank.Overwhelming, EquipmentsAbleTo.Helmet);
             //팔
-            new Equipment("샤자한의 검집", 70, 5, 0, 0, ItemRank.영웅, EquipmentsAbleTo.팔);
-            new Equipment("미스릴 방패", 100, 30, 200, 0, ItemRank.전설, EquipmentsAbleTo.팔);
-            new Equipment("행운의 주사위", 240, 0, 0, 35, ItemRank.전설, EquipmentsAbleTo.팔);
-            new Equipment("혈사조", 550, 100, 0, 0, ItemRank.초월, EquipmentsAbleTo.팔);
+            new Equipment("샤자한의 검집", 70, 5, 0, 0, ItemRank.Hero, EquipmentsAbleTo.Arm);
+            new Equipment("미스릴 방패", 100, 30, 200, 0, ItemRank.Legend, EquipmentsAbleTo.Arm);
+            new Equipment("행운의 주사위", 240, 0, 0, 35, ItemRank.Legend, EquipmentsAbleTo.Arm);
+            new Equipment("혈사조", 550, 100, 0, 0, ItemRank.Overwhelming, EquipmentsAbleTo.Arm);
             //다리
-            new Equipment("부케팔로스", 50, 0, 100, 25, ItemRank.영웅, EquipmentsAbleTo.다리);
-            new Equipment("알렉산드로", 80, 0, 100, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-            new Equipment("레이싱 부츠", 100, 15, 0, 33, ItemRank.전설, EquipmentsAbleTo.다리);
-            new Equipment("분홍신", 400, 50, 500, 0, ItemRank.전설, EquipmentsAbleTo.다리);
+            new Equipment("부케팔로스", 50, 0, 100, 25, ItemRank.Hero, EquipmentsAbleTo.Shoes);
+            new Equipment("알렉산드로", 80, 0, 100, 33, ItemRank.Legend, EquipmentsAbleTo.Shoes);
+            new Equipment("레이싱 부츠", 100, 15, 0, 33, ItemRank.Legend, EquipmentsAbleTo.Shoes);
+            new Equipment("분홍신", 400, 50, 500, 0, ItemRank.Legend, EquipmentsAbleTo.Shoes);
         }
         #endregion
         //장비 스탯을 보여주는 함수

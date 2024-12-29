@@ -11,16 +11,36 @@ namespace Search_for_Carry
     {
         //EquipmentsAbleTo _enablePart;
         
-         Dictionary<EquipmentsAbleTo, Equipment> _equippeditems;
+        Dictionary<EquipmentsAbleTo, Equipment> _equippeditems;
+        LinkedList<Equipment> _hasBeenEquipped;
         public Loadout()
         {
             if (_equippeditems == null)
             {
                 _equippeditems = new Dictionary<EquipmentsAbleTo, Equipment>();
+                _hasBeenEquipped = new LinkedList<Equipment>(); 
             }
 
         }
-
+        public void ShowEquipment()
+        {
+           
+            foreach(var item in _hasBeenEquipped)
+            {
+                if(item == null) continue;
+                switch (item.EquipmentsAbleTo)
+                {
+                    
+                    case EquipmentsAbleTo.Weapon : Console.WriteLine($"무기: {item.Name}");
+                        break;
+                    case EquipmentsAbleTo.Cloth : Console.WriteLine($"옷: {item.Name}"); break;
+                    case EquipmentsAbleTo.Helmet: Console.WriteLine($"머리: {item.Name}"); break;
+                    case EquipmentsAbleTo.Arm: Console.WriteLine($"팔: {item.Name}"); break;
+                    case EquipmentsAbleTo.Shoes: Console.WriteLine($"다리: {item.Name}"); break;
+                    
+                }
+            }
+        }
         public void UseEquipment(string name)
         {
             foreach (var item in inventory)
@@ -28,11 +48,13 @@ namespace Search_for_Carry
                 if (item.Name == name)
                 {
                     var equipment = item as Equipment;
+                    _hasBeenEquipped.AddFirst(equipment);
                     Console.WriteLine($"{item.Name} 장비!");
                     if (_equippeditems.ContainsKey(equipment.EquipmentsAbleTo))
                     {
                         var oldEquipment = _equippeditems[equipment.EquipmentsAbleTo];
                         inventory.AddFirst(oldEquipment);
+                        _hasBeenEquipped.Remove(oldEquipment);
                         MinusMaxHp = oldEquipment.Hp;
                         MinusAtk = oldEquipment.Atk;
                         MinusDef = oldEquipment.Def;
